@@ -1,0 +1,780 @@
+@font-face {
+    font-family: PralineReg;
+    src: url("resources/fontkits/praline_mcl_regular-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: PralineAlt;
+    src: url("resources/fontkits/praline_mcl_alt-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: RobotoNew;
+    src: url("resources/fontkits/roboto-regular-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: RobotoNewBlack;
+    src: url("resources/fontkits/roboto-black-webfont.woff") format("woff");
+}
+
+@font-face {
+    font-family: RobotoNewLight;
+    src: url("resources/fontkits/roboto-light-webfont.woff") format("woff");
+}
+
+:root {
+    --green1: #32c787;
+    --green2: #188a59;
+    --green3: #13643c;
+    --green4: #e9fff5;
+}
+
+* {
+    color: rgba(0, 0, 0, 0.85);
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-family: RobotoNew;
+    box-sizing: border-box;
+}
+
+html {
+    -webkit-text-size-adjust: 100%;
+}
+
+h1 {
+    font-family: PralineReg;
+    font-size: 3.1vw;
+    font-weight: 100;
+}
+
+h2 {
+    font-size: max(17px, 1.6vw);
+    text-decoration-thickness: 3px;
+}
+
+p {
+    font-family: RobotoNewLight;
+    font-size: 2vw;
+    font-weight: 500;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color:black;
+}
+
+.header-wrapper {
+    z-index: 10;
+    background-color: white;
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.2);
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    height: max(45px, 5vw);
+    display: flex;
+    justify-content: center;
+}
+
+.header {
+    position: absolute;
+    bottom: 0;
+    width: 95%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.header-static-menu {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#header-menu-left {
+    justify-content: flex-end;
+}
+
+#header-menu-left a {
+    margin-right: 4vw;
+}
+
+#header-menu-right a {
+    margin-left: 4vw;
+}
+
+#header-menu-right {
+    justify-content: flex-start;
+}
+
+.header-links {
+    position: relative;
+    top: 10%;
+    padding: 5px;
+    font-family: RobotoNew;
+    font-size: max(15px, 1.2vw);
+}
+
+.header-links:hover {
+    color: rgba(0, 0, 0, 0.75);
+    transform: translateY(-5%);
+    transition: transform 0.3s ease-in;
+}
+
+#logo-wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+#logo {
+    height: 75%;
+}
+
+.menu-wrapper {
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 100%;
+    width: 100px;
+    justify-content: center;
+    align-items: center;
+    display: none;
+}
+
+.menu-toggle {
+    width: 30px;
+    height: 25px;
+}
+
+.menu-bar {
+    width: 100%;
+    height: 16%;
+    background-color: black;
+    padding: 1px;
+    margin-top: 16%;
+}
+
+.blanket-menu-container {
+    display: none;
+}
+
+footer {
+    background-color: rgb(236, 236, 236);
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(185px, max-content));
+    justify-content: space-around;
+    padding: 40px 30px;
+}
+
+.footer-column {
+    box-sizing: content-box;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    margin: 0 20px 15px 0;
+}
+
+footer p, footer .bold-text {
+    margin-top: 10px;
+    font-family: RobotoNew;
+    font-size: max(0.13in, 1.4vw);
+    font-weight: 1;
+    line-height: max(19px, 2.3vw);
+}
+
+#first-list-element {
+    margin-top: 10px !important;
+}
+
+.bold-text {
+    font-style: normal;
+    font-weight: 700 !important;
+    margin: 0 !important;
+}
+
+.footer-contact-info {
+    margin: 0 !important;
+}
+
+footer a {
+    font-weight: 1;
+}
+
+footer a:hover {
+    color: rgb(58, 58, 58);
+} 
+
+.footer-form .field {
+    border: solid rgba(0, 0, 0, .5);
+    border-radius: 5px;
+    width: max(180px, 25vw);
+    height: max(30px, 3vw);
+    margin: 15px 0;
+}
+
+.footer-form .field input {
+    font-size: max(12px, 1.6vw);
+    border-radius: 0px;
+    width: 100%;
+    height: 100%;
+}
+
+main {
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.banner {
+    width: 100%;
+    margin: 0 auto 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 45vw;
+}
+
+.banner button, footer button {
+    color: white;
+    font-family: RobotoNewBlack;
+    font-size: max(14px, 2vw);
+    background-color: transparent;
+    cursor: pointer;
+    padding: 0 max(7px, 0.75vw);
+}
+
+footer button {
+    font-size: max(14px, 1.75vw) !important;
+}
+
+footer .button-wrapper {
+    padding: 0 !important;
+    border-radius: max(5px, 0.5vw) !important;
+}
+
+.banner button {
+    padding-right: 0 !important;
+    padding-left: 1.25vw !important;
+}
+
+.banner-gallery {
+    width: 100%;
+    display: block;
+}
+
+.banner img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.banner-caption, .banner-media {
+    display: block;
+    width: 35%;
+    margin: auto 0;
+    padding: 1vw;
+}
+
+.banner-media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55%;
+}
+
+.start-banner {
+    height: calc(45vw + 60px);
+    background-color: var(--green1);
+}
+
+.start-banner .banner-media, .start-banner .banner-caption{
+    position: relative;
+    top: 30px;
+}
+
+#main-banner-1 {
+    background-color: rgb(253, 223, 188);
+}
+
+.fade-from-left, .fade-from-right, .fade-from-center {
+    visibility: hidden;
+}
+
+@keyframes fadeIn {
+    0% {
+       opacity: 0;
+    }
+    100% {
+       opacity: 1;
+    }
+ }
+
+ @keyframes fadeInCenter {
+    0% {
+       opacity: 0;
+       transform:scale(0.85);
+    }
+    100% {
+       opacity: 1;
+       transform: scale(1);
+    }
+ }
+
+ @keyframes fadeInLeft {
+    0% {
+       opacity: 0;
+       transform: translateX(-60px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }
+
+ @keyframes fadeInRight {
+    0% {
+       opacity: 0;
+       transform: translateX(60px);
+    }
+    100% {
+       opacity: 1;
+       transform: translateX(0);
+    }
+ }
+
+
+ .fade-from-center.enable-center-fade {
+    visibility: visible !important;
+    animation: fadeInCenter 1s ease-in-out;
+ }
+
+ .fade-from-left.enable-left-fade {
+    visibility: visible !important;
+    animation: fadeInLeft 1s ease-in-out;
+ }
+
+ .fade-from-right.enable-right-fade {
+    visibility: visible !important;
+    animation: fadeInRight 1s ease-in-out;
+ }
+
+.banner p {
+    margin: 0.5vw 0 max(10px, 2vw) 0;
+}
+
+.button-wrapper {
+    position: relative;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--green2);
+    padding: max(3px, .4vw);
+    border-radius: 10vw;
+}
+
+.button-wrapper:hover {
+    background-color: var(--green3);
+}
+
+.button-wrapper svg {
+    position: relative;
+    height: max(12px, 2.5vw);
+    margin: 0 1.5vw;
+    overflow:visible;
+    fill: white;
+}
+
+.button-wrapper:hover .svg-arrow {
+    animation: arrow-anim 0.75s ease-in-out infinite alternate;
+}
+
+@keyframes arrow-anim {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(30%);
+    }
+}
+
+#product-banner-1, #about-us-banner-1{
+    text-align: center;
+    height: 20vw;
+}
+
+#product-banner-1 .banner-caption, #about-us-banner-1 .banner-caption {
+    width: auto;
+}
+
+#product-banner-1 h1, #about-us-banner-1 h1 {
+    margin: 20px 20px;
+    color: white;
+    font-size: max(34px, 7vw) !important;
+    line-height: 38px;
+}
+
+.gallery-container {
+    width:80%;
+    margin:auto;
+}
+
+.gallery-header {
+    font-size: 4vw;
+}
+
+.product-gallery {
+    width: 80%;
+    margin: 0px auto max(10px, 2vw) auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    justify-content: center;
+    gap: max(20px, 4.5vw);
+}
+
+.product-media img {
+    width: 100%;
+    height: auto;
+}
+
+#cream-gallery {
+    margin-bottom: max(60px, 10vw);
+}
+
+.product-card, .product-media, .product-caption {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    text-align: center;
+}
+
+.product-card:hover, .product-card:hover img {
+    color: rgba(0, 0, 0, 0.75);
+    transform: scale(1.02) translateY(-3%);
+    transition: transform 0.5s ease;
+}
+
+.product-showcase {
+    margin: max(65px, 8vw) 0 0 0;
+    height: auto;
+    flex-wrap: wrap;
+    align-items: start;
+}
+
+.image-slider-container {
+    width: 32%;
+    margin-right: 8%;
+}
+
+.product-description {
+    width: 32%;
+}
+
+.image-slider {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.selected {
+    width: 100%;
+    border-style: groove;
+    border-width: 2px;
+}
+
+.photo-queue {
+    margin: 5px auto;
+    display: inline-flex;
+    overflow: hidden;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.photo-queue-img {
+    width: 20%;
+    height: 100%;
+    cursor: pointer;
+    opacity: 60%;
+    border-style: groove;
+    border-width: 2px;
+    min-width: 20%;
+}
+
+.photo-queue-img.active {
+    opacity: 100%;
+}
+
+.photo-queue-img:hover {
+    opacity: 100%;
+}
+
+.product-description h1 {
+    line-height: max(5px, 3.3vw);
+}
+
+.product-description p {
+    font-size: 1.4vw;
+    margin: 0;
+}
+
+.node-box {
+    margin: max(10px, 1vw) 0 !important;
+}
+
+.product-description-node {
+    display: inline-flex;
+    align-items: center;
+    margin-bottom: max(2px, 0.5vw);
+}
+
+.product-description-svg {
+    width: max(20px, 7%);
+    margin-right: max(3px, 1vw);
+}
+
+.product-description .node-text {
+    margin: 0;
+    font-family: RobotoNewBlack;
+}
+
+.disp-header-alt {
+    display: none;
+    width: 80%;
+}
+
+#product-showcase-mural {
+    background-image: url("resources/images/love-planet.jpeg");
+    background-position: center;
+    background-size: cover;
+}
+
+.disp-header-default {
+    display: flex;
+}
+
+#find-us-banner-1, #our-process-banner-1 {
+    background-image: url("resources/images/people-shopping.svg");
+    background-size:cover;
+    background-position: center;
+    background-repeat: none;
+}
+
+#our-process-banner-1 {
+    background-image: url("resources/images/people-house-chores.svg");
+}
+
+#find-us-banner-1 .banner-caption, #our-process-banner-1 .banner-caption {
+    width: 90vw;
+}
+
+#find-us-temp-header, #our-process-temp-header {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-style: solid;
+    border-width: max(2px, 0.25vw);
+    border-radius: max(10px, 2vw);
+    padding: 10px;
+    text-align: center;
+    font-size: 5.5vw;
+}
+
+.text-banner {
+    text-align: center;
+    width: 75%;
+    margin: max(20px, 6vw) auto;
+}
+
+.text-banner h1 {
+    font-size: max(26px, 6.2vw);
+    line-height: max(31px, 8vw);
+}
+
+@media (max-width: 8.3in) {
+    .header {
+        justify-content: space-between;
+    }
+
+    p {
+        font-weight: 700;
+    }
+    
+    .header-static-menu {
+        display: none;
+    }
+
+    .menu-wrapper {
+        display: flex;
+    }
+
+    #logo-wrapper {
+        margin-left: 15px;
+    }
+
+    .blanket-menu-container {
+        width: 100%;
+        height: 100%;
+        position: fixed;
+        display: flex;
+        visibility: hidden;
+        z-index: 9;
+        justify-content: center;
+        align-items: center;
+        transition: background-color 0.5s;
+    }
+    
+    .blanket-menu-container.open {
+        visibility: visible;
+        background-color: white; 
+        transition: background-color 0.5s;
+    }
+    
+    .blanket-nav-wrapper {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .header-links {
+        margin: 10px;
+        font-size: max( 20px, 2vw);
+        font-family: RobotoNewBlack;
+        text-align: center;
+    }
+    
+    .banner {
+        flex-direction: column-reverse;
+        height: auto !important;
+    }
+
+    .fade-from-center.enable-center-fade, .fade-from-right.enable-right-fade, .fade-from-left.enable-left-fade  {
+        visibility: visible !important;
+        animation: fadeIn 1s ease-in-out;
+     }
+
+    #main-banner-2, .product-showcase {
+     flex-direction: column;
+    }
+
+    .start-banner .banner-media {
+        top: 0;
+        margin-top: 60px;
+    }
+
+    .start-banner .banner-caption {
+        top: 0;
+        margin-top: 0px;
+    }
+
+    .banner-caption, .banner-media {
+        width: 90%;
+        text-align: center;
+    }
+
+    .banner-caption {
+        margin-bottom: 12px;
+    }
+
+    h1, #find-us-temp-header, #our-process-temp-header {
+        font-size: max(26px, 6.2vw);
+        line-height: max(31px, 8vw);
+    }
+
+    p, .banner button,  .product-description p {
+        font-size: max(14px, 3vw);
+    }
+
+    .gallery-header {
+        text-align: center;
+        width: auto;
+        margin: 20px 0 0 0;
+        padding: 0 25px;
+    }
+
+    #product-banner-1 .banner-caption, #about-us-banner-1 .banner-caption{
+        margin-top: 50px;
+        margin-bottom: 30px;
+    }
+
+    #product-showcase-mural {
+        height: max(200px, 70vw) !important;
+    }
+
+    #find-us-banner-1 .banner-caption,  #our-process-banner-1 .banner-caption {
+        margin-top: 70px;
+        margin-bottom: 40px;
+    }
+
+    #find-us-banner-1, #our-process-banner-1 {
+        height: max(350px, 40vw) !important;
+        background-position: right;
+    }
+
+    .gallery-header {
+        font-size: max(35px, 8.5vw);
+    }
+
+    .image-slider-container, .product-description {
+        margin: 5px 0;
+        width: 65%;
+    }
+
+    .product-showcase {
+        align-items: center;
+    }
+
+    .disp-header-alt {
+        display: flex;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .disp-header-default {
+        display: none;
+    }
+}
+
+@media (max-width: 550px) {
+
+    .banner .button-wrapper {
+        padding-left: 2vw;
+    }
+
+    #logo-wrapper {
+        margin-left: 5px;
+    }
+
+    .menu-wrapper {
+        width: 70px;
+    }
+    
+    .image-slider-container, .product-description {
+        margin: 5px 0;
+        width: 85%;
+    }
+
+    .text-banner {
+        text-align: start;
+    }
+}
+
+@media (max-height: 310px) {
+    .blanket-menu-container {
+        align-items: start;
+    }
+
+    .blanket-menu {
+        margin-top: max(50px, 23vh);
+    }
+
+    .header-links {
+        margin: 1vh;
+        padding: 3px;
+    }
+}
